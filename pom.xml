@@ -1,18 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>com.lmv.puma</groupId>
+  <groupId>com.lmv.tools</groupId>
   <artifactId>tools</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.5-SNAPSHOT</version>
   <packaging>pom</packaging>
   
   <name>tools-pom-parent</name>
-  <description>boite à outils puma</description>
+  <description>utilitaires environnement de dev PUMA Appli T2-2013</description>
   <url>http://maven.apache.org</url>
+  
+  <organization>
+    <name>Le Page - Molu - Vaz</name>
+    <url>http://ma</url>
+  </organization>
   
   <modules>
   	<module>tools-ihm</module>
   	<module>tools-service</module>
+  	<module>tools-distribution</module>
   </modules>
   
   <properties>
@@ -21,21 +27,23 @@
     <target.runtime.version>1.6</target.runtime.version>
     <springframework.version>3.0.5.RELEASE</springframework.version>
     <log4j.version>1.2.17</log4j.version>
+    <maven.assembly.plugin.version>2.4</maven.assembly.plugin.version>
+    <maven.jar.plugin.version>2.3.1</maven.jar.plugin.version>
   </properties>
   
   <build>
-      <pluginManagement>
-          <plugins>
-              <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>${target.runtime.version}</source>
-                        <target>${target.runtime.version}</target>
-                    </configuration>
-              </plugin>
-          </plugins>
-      </pluginManagement>
+	<pluginManagement>
+	    <plugins>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	              <artifactId>maven-compiler-plugin</artifactId>
+	              <configuration>
+	                  <source>${target.runtime.version}</source>
+	                  <target>${target.runtime.version}</target>
+	              </configuration>
+	        </plugin>
+	    </plugins>
+	</pluginManagement>
   </build>
   <dependencies>
     
@@ -55,6 +63,7 @@
     	<artifactId>spring-context</artifactId>
     	<version>${springframework.version}</version>
     </dependency>
+    
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
