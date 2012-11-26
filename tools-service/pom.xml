@@ -4,9 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
-    <groupId>com.lmv.puma</groupId>
+    <groupId>com.lmv.tools</groupId>
     <artifactId>tools</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
   </parent>
   
   <artifactId>tools-service</artifactId>
@@ -15,8 +15,29 @@
   
   <properties></properties>
   
-  <dependencies>
-	   
-  </dependencies>
+  <build>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
+                <!-- The configuration of the plugin -->
+                <configuration>
+                  <archive>
+                    <manifest>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                      <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                    </manifest>
+                    <manifestEntries>
+                        <Class-Path>/v1.1/</Class-Path>
+                    </manifestEntries>
+                    </archive>
+                  </configuration>
+            </plugin>
+          </plugins>
+      </pluginManagement>
+  </build>
+  <dependencies></dependencies>
   
 </project>

@@ -7,4 +7,17 @@
 
     <context:component-scan base-package="com.lmv.tools.service"></context:component-scan>
     
+    <bean id="processBuilder" class="java.lang.ProcessBuilder">
+        <constructor-arg type="java.util.List">
+            <list>
+                <value type="java.lang.String">cmd.exe</value>
+                <value type="java.lang.String">/C</value>
+                <value type="java.lang.String">start hellobat.cmd</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="cmdLauncher" class="com.lmv.tools.service.CmdLauncher">
+<!--         <property name="processBuilder" ref="processBuilder"></property> -->
+    </bean>
 </beans>
