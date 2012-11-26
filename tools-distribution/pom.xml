@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.lmv.tools</groupId>
     <artifactId>tools</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
   </parent>
   <artifactId>tools-distribution</artifactId>
   <packaging>pom</packaging>
