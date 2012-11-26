@@ -4,9 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
-    <groupId>com.lmv.puma</groupId>
+    <groupId>com.lmv.tools</groupId>
     <artifactId>tools</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
   </parent>
   
   <artifactId>tools-ihm</artifactId>
@@ -15,9 +15,42 @@
   
   <properties></properties>
   
+  <build>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
+                <!-- The configuration of the plugin -->
+                <configuration>
+                  <archive>
+                    <manifest>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                      <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                      <!-- Classpath is added to the manifest of the created jar file. -->
+                      <addClasspath>true</addClasspath>
+                      <mainClass>com.lmv.tools.ihm.Main</mainClass>
+                      <!--
+                               Configures the classpath prefix. This configuration option is
+                               used to specify that all needed libraries are found under lib/
+                               directory.
+                           -->
+                      <classpathPrefix>lib/</classpathPrefix>
+                    </manifest>
+	                <manifestEntries>
+	                    <Class-Path>lib/script</Class-Path>
+	                </manifestEntries>
+                    </archive>
+                  </configuration>
+            </plugin>
+          </plugins>
+      </pluginManagement>
+  </build>
+  
   <dependencies>
     <dependency>
-      <groupId>com.lmv.puma</groupId>
+      <groupId>com.lmv.tools</groupId>
       <artifactId>tools-service</artifactId>
       <version>${project.version}</version>
     </dependency>
